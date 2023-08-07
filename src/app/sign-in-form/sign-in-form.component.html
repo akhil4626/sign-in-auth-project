@@ -2,7 +2,7 @@
   
   <div class="mb-3">
   <label for="exampleInputEmail1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="userId"   [ngModelOptions]="{standalone: true}" required minlength="4" />
+  <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="userId"   [ngModelOptions]="{standalone: true}" required minlength="4" />
   <div>
   </div>
   </div>
@@ -17,6 +17,6 @@
   <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
   <button type="submit" class="btn btn-primary btn-lg" (click)="submit()">Submit</button>
-  <p id="passwordHelpBlock" class="err-msg form-text" *ngIf="noMatch">Userid  or password didnot match, please cross check and comeback again</p>
+  <p id="passwordHelpBlock" class="err-msg form-text" *ngIf="noMatch">User Id  or password didnot match, please cross check and comeback again</p>
   
     </form>

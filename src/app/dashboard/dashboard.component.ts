@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { SharedLogoutService } from '../shared-logout.service';
+
 RouterModule
 @Component({
   selector: 'app-dashboard',
@@ -7,10 +9,11 @@ RouterModule
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  constructor(private router:Router){}
+  constructor(private sharedService:SharedLogoutService ) {}
+
 // dashboard.component.ts
 signInForm() {
-  this.router.navigate(['/']); // Redirect to the logout route
+  this.sharedService.logout();
 }
 
 }

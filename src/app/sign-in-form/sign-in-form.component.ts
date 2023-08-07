@@ -13,6 +13,8 @@ export class SignInFormComponent {
   noMatch = false;
   constructor( private http:HttpServiceService,private router:Router){}
   submit(){
+
+  
     this.http.createDataInDb(this.userId,this.password).subscribe({
       next: (data) => {
         this.router.navigate(['/dashboard']); // Redirect to the root route after successful update
@@ -23,6 +25,5 @@ export class SignInFormComponent {
       },
       
     });
-  
+    }
   }
-}

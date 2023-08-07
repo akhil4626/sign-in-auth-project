@@ -4,25 +4,24 @@ import { RouterModule,Routes} from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
 import { FormsModule } from '@angular/forms';
 import { HttpServiceService } from './http-service.service';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { SignInFormComponent } from './sign-in-form/sign-in-form.component';
+
 const routes:Routes = [
   {
     path:'',component:SignInFormComponent
   },
   {
-    path:'dashboard',component:DashboardComponent
+    path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
 
   },
 ]
 @NgModule({
   declarations: [
     AppComponent,
-    SignInFormComponent,
-    DashboardComponent
+    SignInFormComponent
 
   ],
   imports: [
@@ -35,7 +34,9 @@ const routes:Routes = [
 
 
   ],
-
+  exports:[
+    SignInFormComponent
+  ],
   providers: [HttpServiceService],
   bootstrap: [AppComponent]
 })
